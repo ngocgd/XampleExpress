@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "mongo": "^0.1.0",
+    "mongodb": "^4.7.0",
+    "node-sass": "^7.0.1"
+  },
+  "name": "day11-express-framework",
+  "version": "1.0.0",
+  "main": "src/simple-server-express.js",
+  "scripts": {
+    "start": "nodemon simple-server-express.js",
+    "watch": "node-sass --watch src/resources/scss/app.scss src/public/css/app.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
