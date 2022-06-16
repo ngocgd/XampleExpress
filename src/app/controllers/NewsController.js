@@ -1,13 +1,11 @@
-class NewsController{
-    index(req,res){
-        res.render('new');
-    }
+class NewsController {
+  index(req, res) {
+    res.render('new');
+  }
 
-    show(req,res){
-        res.send('news details');
-    }
+  show(req, res) {
+    res.send('news details');
+  }
 }
 
-module.exports = new NewsController;
-
-
+module.exports = new NewsController();
