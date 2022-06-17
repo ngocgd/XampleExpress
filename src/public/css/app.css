@@ -2,4 +2,16 @@ h1 {
   color: aqua; }
 
 h2 {
-      color: aqua; }
+  color: red; }
+
+.card-img-top {
+  height: 250px; }
+
+.card-text {
+  height: 200px; }
+
+.col-lg-4 {
+  margin-bottom: 10px; }
+
+.card {
+  margin-top: 50px; }
