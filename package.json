@@ -6,6 +6,7 @@
     "mongo": "^0.1.0",
     "mongodb": "^4.7.0",
     "mongoose": "^6.3.8",
+    "mongoose-delete": "^0.5.4",
     "mongoose-slug-generator": "^1.0.4",
     "node-sass": "^7.0.1"
   },
