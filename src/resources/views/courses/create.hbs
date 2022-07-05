@@ -1,3 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/home/1">Camera</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Lựa chọn
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/courses/create">Thêm máy ảnh</a>
+            <a class="dropdown-item" href="/me/list/courses">Danh sách máy ảnh</a>
+          </div>
+        </li>
+    </div>
+  </div>
+</nav>
+
 <div  class="mt-4">
 <form method="POST">
   <div class="form-group">
@@ -12,6 +35,24 @@
     <label for="Name">VideoID : </label>
     <input type="text" class="form-control" id="videoid" name="videoid" placeholder="videoID">
   </div>
+  {{!-- <div class="form-group">
+    <label for="Name">Cost : </label>
+    <input type="text" class="form-control" id="cost" name="cost" placeholder="cost">
+  </div> --}}
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+</div>
+
+<div class="card">
+    <div  style="text-align: center;">
+        <div class="card-header">
+            Trích
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>Bức ảnh mà bạn chụp bằng máy ảnh là sự tưởng tượng mà bạn muốn tạo ra với thực tế.</p>
+                <footer class="blockquote-footer">Scott Lorenzo <cite title="Source Title"></cite></footer>
+            </blockquote>
+        </div>
+    </div>
 </div>

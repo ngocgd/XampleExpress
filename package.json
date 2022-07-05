@@ -1,14 +1,19 @@
 {
   "dependencies": {
     "bootstrap": "^5.2.0-beta1",
+    "connect-redis": "^6.1.3",
+    "cookie-parser": "^1.4.6",
+    "crypto-js": "^4.1.1",
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6",
+    "jsonwebtoken": "^8.5.1",
     "mongo": "^0.1.0",
     "mongodb": "^4.7.0",
     "mongoose": "^6.3.8",
     "mongoose-delete": "^0.5.4",
     "mongoose-slug-generator": "^1.0.4",
-    "node-sass": "^7.0.1"
+    "node-sass": "^7.0.1",
+    "redis": "^4.1.0"
   },
   "name": "day11-express-framework",
   "version": "1.0.0",

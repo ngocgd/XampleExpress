@@ -1,20 +1,68 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/home/1">Camera</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Lựa chọn
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/courses/create">Thêm máy ảnh</a>
+            <a class="dropdown-item" href="/me/list/courses">Danh sách máy ảnh</a>
+          </div>
+        </li>
+    </div>
+  </div>
+</nav>
+
 <div class="mt-4" >
     <div class="row">
         {{#each courses}}
         <div class="col-lg-4" >
             <div class="card">
-                <a href="/courses/{{this.slug}}">
+                <a href="/courses/{{this.name}}">
                     <img class="card-img-top" src="{{this.image}}" alt="Card image cap">
                 </a>
                 <div class="card-body">
-                    <a href="/courses/{{this.slug}}">
+                    <a href="/courses/{{this.name}}">
                         <h5 class="card-title">{{this.name}}</h5>
                     </a>
                     <p class="card-text">{{this.description}}</p>
-                    <a href="#" class="btn btn-primary">Mua máy ảnh</a>
+                    {{!-- <h4 class="cost-text">Giá : {{this.cost}} Đồng</h4> --}}
+                    {{!-- <a href="#" class="btn btn-primary">Mua máy ảnh</a> --}}
                 </div>
             </div>
         </div>
         {{/each}}
+    </div>
+</div>
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    {{!-- <li class="page-item"><a class="page-link" href="#">Previous</a></li> --}}
+    <li class="page-item"><a class="page-link" href="/home/1">1</a></li>
+    <li class="page-item"><a class="page-link" href="/home/2">2</a></li>
+    <li class="page-item"><a class="page-link" href="/home/3">3</a></li>
+    <li class="page-item"><a class="page-link" href="/home/4">4</a></li>
+    <li class="page-item"><a class="page-link" href="/home/5">5</a></li>
+    {{!-- <li class="page-item"><a class="page-link" href="#">Next</a></li> --}}
+  </ul>
+</nav>
+<div class="card">
+    <div  style="text-align: center;">
+        <div class="card-header">
+            Trích
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>Bức ảnh mà bạn chụp bằng máy ảnh là sự tưởng tượng mà bạn muốn tạo ra với thực tế.</p>
+                <footer class="blockquote-footer">Scott Lorenzo <cite title="Source Title"></cite></footer>
+            </blockquote>
+        </div>
     </div>
 </div>

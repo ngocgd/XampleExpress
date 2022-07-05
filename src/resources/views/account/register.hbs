@@ -1,0 +1,65 @@
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th>UserNam</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Password</th>
+      <th>Role</th>
+      <th>Option</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each accounts}}
+    <tr>
+      <th scope="row">{{@index}}</th>
+      <td>{{this.username}}</td>
+      <td>{{this.email}}</td>
+      <td>{{this.phone}}</td>
+      <td>{{this.password}}</td>
+      <td>{{this.role}}</td>
+      <td><button type="button" class="btn btn-secondary" data-id="{{this._id}}" data-toggle="modal" data-target="#deleteModal">Delete</button></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+<div id="deleteModal" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Xác nhận</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Xác nhận xóa </p>
+            </div>
+            <div class="modal-footer">
+                <button id="btn-delete-account" type="button" class="btn btn-primary">Xác nhận</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form name="delete-account" method = "post"></form>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        let accountId;
+        var deleteButton = document.getElementById("btn-delete-account");
+        var formDelete = document.forms['delete-account'];
+        $('#deleteModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            accountId = button.data('id') // Extract info from data-* attributes
+
+        })
+        deleteButton.onclick = function(){
+            formDelete.action = "account/delete/" + accountId;
+            formDelete.submit();
+        }
+    })
+</script>

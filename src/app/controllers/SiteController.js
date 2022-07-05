@@ -11,6 +11,8 @@ class SiteController {
     //     }
     // })
     courses.find({})
+      .skip((req.params.page-1)*6)
+      .limit(6)
       .then(courses =>{
         res.render('home',{
           courses : mutipleMongooseToObject(courses)

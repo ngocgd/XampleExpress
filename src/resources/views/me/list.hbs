@@ -1,12 +1,43 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/home/1">Camera</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Lựa chọn
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/courses/create">Thêm máy ảnh</a>
+            <a class="dropdown-item" href="/me/list/courses">Danh sách máy ảnh</a>
+          </div>
+        </li>
+    </div>
+  </div>
+</nav>
+
 <div>
-    <h3 ><a href="/me/list/deleted">Thùng rác</a></h3>
+    <h3><a href="/me/list/deleted">Thùng rác</a></h3>
 </div>
 <table class="table">
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Description</th>
+            <th scope="col">Name
+                <a>
+                    {{{sortable 'name' _sort}}}
+                </a>
+            </th>
+            <th scope="col">Description
+                <a>
+                    {{{sortable 'Description' _sort}}}
+                </a>
+            </th>
             <th scope="col">Option</th>
         </tr>
     </thead>
@@ -43,29 +74,45 @@
                 <p>Xác nhận xóa </p>
             </div>
             <div class="modal-footer">
-                <button id="btn-delete-course"type="button" class="btn btn-primary">Xác nhận</button>
+                <button id="btn-delete-course" type="button" class="btn btn-primary">Xác nhận</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
             </div>
         </div>
     </div>
 </div>
+
+<div class="card">
+    <div  style="text-align: center;">
+        <div class="card-header">
+            Trích
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>Bức ảnh mà bạn chụp bằng máy ảnh là sự tưởng tượng mà bạn muốn tạo ra với thực tế.</p>
+                <footer class="blockquote-footer">Scott Lorenzo <cite title="Source Title"></cite></footer>
+            </blockquote>
+        </div>
+    </div>
+</div>
+
 {{!-- delete hidden form --}}
 <form name="delete-course-form" method="POST"></form>
 
 <script>
-    document.addEventListener('DOMContentLoaded',function(){
+    document.addEventListener('DOMContentLoaded', function () {
         var courseID;
         var deleteButton = document.getElementById('btn-delete-course');
         var formDelete = document.forms['delete-course-form'];
         $('#deleteModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget) // Button that triggered the modal
-        courseID = button.data('id') // Extract info from data-* attributes
+            var button = $(event.relatedTarget) // Button that triggered the modal
+            courseID = button.data('id') // Extract info from data-* attributes
         })
-        deleteButton.onclick = function(){
+        deleteButton.onclick = function () {
             formDelete.action = '/courses/softDelete/' + courseID;
             formDelete.submit();
         }
     });
-    
-    
-</script> 
+
+
+</script>
+

@@ -1,6 +1,8 @@
+const client = require('../../connection-redis')
+
 class NewsController {
-  index(req, res) {
-    res.render('new');
+  async index(req, res) {
+    res.render('new',{token : await client.get('62bac182806e889b051dafa5')});
   }
 
   show(req, res) {

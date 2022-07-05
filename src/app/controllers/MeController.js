@@ -3,6 +3,7 @@ const { mutipleMongooseToObject } = require('../../util/mongoose')
 
 class MeController {
   showAll(req, res, next) {
+    // res.json(res.locals._sort);
     courses.find({})
       .then(courses => {
         res.render('me/list', {

@@ -1,13 +1,12 @@
 const courses = require('../models/course');
 const { mongooseToObject } = require('../../util/mongoose');
 const { nextTick } = require('process');
-const course = require('../models/course');
 
 class CourseController {
   show(req, res, next) {
-    courses.findOne({ slug: req.params.slug })
+    courses.findOne({ name: req.params.slug })
       .then(course => {
-        res.render('courses/show', {
+        res.render('courses/show', {  
           course: mongooseToObject(course)
         });
       })
